@@ -1,6 +1,3 @@
-
-
-
 const $ = sel => document.querySelector(sel)
 const $$ = sel => [].slice.apply(document.querySelectorAll(sel))
 
@@ -16,6 +13,7 @@ window.addEventListener('scroll', () => scrolledBefore === false ? scrolledBefor
 const checkScroll = (initial) => {
 
 	window.requestAnimationFrame(() => {
+		
 		if(window.pageYOffset !== scrollTop && !initial) {
 
 			//console.log(scrolling.getBoundingClientRect().bottom)

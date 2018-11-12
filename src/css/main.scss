@@ -30,6 +30,10 @@
     }
 }
 
+iframe {
+    border: 0;
+}
+
 $red: #CC0A11;
 
 .scrolling-wrapper {
@@ -44,7 +48,7 @@ $red: #CC0A11;
     height: 100vh;
 
     iframe {
-        transform: translateY(calc(50vh - 50%));
+        // transform: translateY(calc(50vh - 50%));
     }
 
     &.wrapper--sticky {
@@ -60,7 +64,7 @@ $red: #CC0A11;
 }
 
 .ios .sticking-wrapper.wrapper--sticky {
-    top: -60px;
+    top: -54px;
 }
 
 .copy {
@@ -134,7 +138,7 @@ $red: #CC0A11;
 
             z-index: 2000;
         }
-
+  
 
         &:before {
             content: '';
@@ -155,23 +159,36 @@ $red: #CC0A11;
 .scrolling-wrapper {
     iframe {
         width: 100%;
-        border-top: 1px solid #dcdcdc !important;
-        border-bottom: 1px solid #dcdcdc !important;
         padding: 6px 0;
         background-color: #fff;
         //box-sizing: border-box;
     }
 
-    margin-top: calc((100vh - 720px - 24px) / -2) !important;
-    margin-bottom: calc((100vh - 720px - 24px) / -2) !important;
+    margin-bottom: calc((100vh - 633px ) / -1) !important;
 
-    @include mq($until: leftCol) {
-        margin-top: calc((100vh - 650px - 24px) / -2) !important;
-        margin-bottom: calc((100vh - 650px -24px) / -2) !important;
+    @include mq($until: mobileLandscape) {
+        @media screen and (max-height: 631px) {
+            margin-bottom: calc((100vh - 633px ) / 1) !important;
+        }
     }
 
-    @include mq($until: tablet) {
-        margin-top: calc((100vh - (100vw * (5/3)) - 24px) / -2) !important;
-        margin-bottom: calc((100vh - (100vw * (5/3)) - 24px) / -2) !important;
+    @include mq(mobileLandscape) {
+        margin-bottom: calc((100vh - 296px ) / -1) !important;
     }
+
+    @include mq(tablet) {
+        margin-bottom: calc((100vh - 372px) / -1) !important;
+    }
+
+    @include mq(leftCol) {
+        margin-bottom: calc((100vh - 516px ) / -1) !important;
+    }
+
+    @include mq(wide) {
+        margin-bottom: calc((100vh - 700px ) / -1) !important;
+    }
+}
+
+#copy-block-line-break {
+  white-space: pre-line;
 }
